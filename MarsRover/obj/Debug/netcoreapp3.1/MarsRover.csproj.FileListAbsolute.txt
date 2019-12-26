@@ -1,0 +1,11 @@
+C:\Case Projects\MarsRover\MarsRover\bin\Debug\netcoreapp3.1\MarsRover.exe
+C:\Case Projects\MarsRover\MarsRover\bin\Debug\netcoreapp3.1\MarsRover.deps.json
+C:\Case Projects\MarsRover\MarsRover\bin\Debug\netcoreapp3.1\MarsRover.runtimeconfig.json
+C:\Case Projects\MarsRover\MarsRover\bin\Debug\netcoreapp3.1\MarsRover.runtimeconfig.dev.json
+C:\Case Projects\MarsRover\MarsRover\bin\Debug\netcoreapp3.1\MarsRover.dll
+C:\Case Projects\MarsRover\MarsRover\bin\Debug\netcoreapp3.1\MarsRover.pdb
+C:\Case Projects\MarsRover\MarsRover\obj\Debug\netcoreapp3.1\MarsRover.csprojAssemblyReference.cache
+C:\Case Projects\MarsRover\MarsRover\obj\Debug\netcoreapp3.1\MarsRover.AssemblyInfoInputs.cache
+C:\Case Projects\MarsRover\MarsRover\obj\Debug\netcoreapp3.1\MarsRover.AssemblyInfo.cs
+C:\Case Projects\MarsRover\MarsRover\obj\Debug\netcoreapp3.1\MarsRover.dll
+C:\Case Projects\MarsRover\MarsRover\obj\Debug\netcoreapp3.1\MarsRover.pdb
