@@ -6,13 +6,13 @@ namespace MarsRover.Library.Model
 {
     public interface IPlateau
     {
-        Position PlateauPosition { get; }
+        IPosition PlateauPosition { get; }
     }
     public class Plateau : IPlateau
     {
-        public Position PlateauPosition { get; private set; }
+        public IPosition PlateauPosition { get; private set; }
 
-        public Plateau(Position position)
+        public Plateau(IPosition position)
         {
             PlateauPosition = position;
         }

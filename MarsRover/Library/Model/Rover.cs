@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using MarsRover.Library.Enum;
+using MarsRover.Library.Helper;
 
 namespace MarsRover.Library.Model
 {
     public interface IRover
     {
-        IPlateau RoverPlateau { get; set; }
-        IPosition RoverPosition { get; set; }
-        Directions RoverDirection { get; set; }
         void Process(string commands);
-        string ToString();
 
+        string CurrentPosition();
     }
+
     public class Rover : IRover
     {
-        public IPlateau RoverPlateau { get; set; }
-        public IPosition RoverPosition { get; set; }
-        public Directions RoverDirection { get; set; }
+        private IPlateau RoverPlateau { get; }
+        private IPosition RoverPosition { get; }
+        private Directions RoverDirection { get; set; }
 
         public Rover(IPlateau roverPlateau, IPosition roverPosition, Directions roverDirection)
         {
@@ -26,6 +23,7 @@ namespace MarsRover.Library.Model
             RoverPlateau = roverPlateau;
             RoverPosition = roverPosition;
         }
+
         public void Process(string commands)
         {
             foreach (var command in commands)
@@ -42,19 +40,19 @@ namespace MarsRover.Library.Model
                         Move();
                         break;
                     default:
-                        throw new ArgumentException(string.Format("Invalid value: {0}", command));
+                        throw new ArgumentException($"Invalid value: {command}");
                 }
             }
         }
 
         private void TurnLeft()
         {
-            RoverDirection = (RoverDirection - 1) < Directions.N ? Directions.W : RoverDirection - 1;
+            RoverDirection = RoverDirection.FindLeft();
         }
 
         private void TurnRight()
         {
-            RoverDirection = (RoverDirection + 1) > Directions.W ? Directions.N : RoverDirection + 1;
+            RoverDirection = RoverDirection.FindRight();
         }
 
         private void Move()
@@ -77,9 +75,9 @@ namespace MarsRover.Library.Model
             }
         }
 
-        public override string ToString()
+        public string CurrentPosition()
         {
-            return string.Format("{0} {1} {2}", RoverPosition.XLine, RoverPosition.YLine, RoverDirection);
+            return $"{RoverPosition.XLine} {RoverPosition.YLine} {RoverDirection}";
         }
     }
 }

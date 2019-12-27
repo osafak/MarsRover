@@ -8,19 +8,18 @@ namespace MarsRover
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            var plateauOne = new Plateau(new Position(5, 5));
 
-            Plateau plateauOne = new Plateau(new Position(5, 5));
-            Rover firstRover = new Rover(plateauOne, new Position(1, 2), Directions.N);
+            var firstRover = new Rover(plateauOne, new Position(1, 2), Directions.N);
             firstRover.Process("LMLMLMLMM");
 
-             
-            
-            Rover secondRover = new Rover(plateauOne, new Position(3, 3), Directions.E);
+            var secondRover = new Rover(plateauOne, new Position(3, 3), Directions.E);
             secondRover.Process("MMRMMRMRRM");
 
-            Console.WriteLine(firstRover.ToString());
-            Console.WriteLine(secondRover.ToString());
+            Console.WriteLine(firstRover.CurrentPosition());
+
+            Console.WriteLine(secondRover.CurrentPosition());
         }
     }
 }
